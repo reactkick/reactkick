@@ -27,5 +27,5 @@ Açık kaynak dünyasına katkı sağlamak ve birlikte üretmek her zaman öncel
 *   💻 **GitHub:** [github.com/reactkick](https://github.com/reactkick)
 *   💡 **Stack Overflow:** [stackoverflow.com/users/30611445/react-kick](https://stackoverflow.com/users/30611445/react-kick)
 *   👤 **Gravatar:** [gravatar.com/reactkick](https://gravatar.com/reactkick)
-
+<a rel="me" href="https://mastodon.social/@reactkick">Mastodon</a>
 ---
