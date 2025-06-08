@@ -1,8 +1,0 @@
-name: Test Connectivity
-on: [push]
-jobs:
-  test:
-    runs-on: ubuntu-latest # veya self-hosted runner etiketiniz
-    steps:
-      - uses: actions/checkout@v4
-      - run: echo "Hello world" 
