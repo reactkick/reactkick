@@ -29,3 +29,4 @@ Açık kaynak dünyasına katkı sağlamak ve birlikte üretmek her zaman öncel
 *   👤 **Gravatar:** [gravatar.com/reactkick](https://gravatar.com/reactkick)
 <a rel="me" href="https://mastodon.social/@reactkick">Mastodon</a>
 ---
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/G2G71G5CQT)
