@@ -1,0 +1,121 @@
+// Simple To-Do List Application with Local Storage
+
+const fs = require('fs');
+const path = require('path');
+
+const STORAGE_FILE = path.resolve(__dirname, 'todo.json');
+
+// Helper: Load todos from local storage (file)
+function loadTodos() {
+  if (!fs.existsSync(STORAGE_FILE)) return [];
+  try {
+    const data = fs.readFileSync(STORAGE_FILE, 'utf-8');
+    return JSON.parse(data);
+  } catch (err) {
+    console.error('Failed to load todos:', err);
+    return [];
+  }
+}
+
+// Helper: Save todos to local storage (file)
+function saveTodos(todos) {
+  try {
+    fs.writeFileSync(STORAGE_FILE, JSON.stringify(todos, null, 2));
+  } catch (err) {
+    console.error('Failed to save todos:', err);
+  }
+}
+
+// Add a new to-do
+function addTodo(task) {
+  const todos = loadTodos();
+  const id = Date.now();
+  todos.push({ id, task, done: false });
+  saveTodos(todos);
+  console.log(`Added: "${task}"`);
+}
+
+// List all to-dos
+function listTodos() {
+  const todos = loadTodos();
+  if (todos.length === 0) {
+    console.log('No todos found.');
+    return;
+  }
+  todos.forEach((todo, idx) => {
+    const status = todo.done ? '[x]' : '[ ]';
+    console.log(`${idx + 1}. ${status} ${todo.task} (id: ${todo.id})`);
+  });
+}
+
+// Mark a to-do as completed
+function completeTodo(id) {
+  const todos = loadTodos();
+  const todo = todos.find((t) => t.id === Number(id));
+  if (!todo) {
+    console.log(`No todo found with id: ${id}`);
+    return;
+  }
+  todo.done = true;
+  saveTodos(todos);
+  console.log(`Completed: "${todo.task}"`);
+}
+
+// Delete a to-do
+function deleteTodo(id) {
+  let todos = loadTodos();
+  const initialLength = todos.length;
+  todos = todos.filter((t) => t.id !== Number(id));
+  if (todos.length === initialLength) {
+    console.log(`No todo found with id: ${id}`);
+    return;
+  }
+  saveTodos(todos);
+  console.log(`Deleted todo with id: ${id}`);
+}
+
+// Command-line interface
+function showHelp() {
+  console.log(`
+To-Do List CLI
+
+Usage:
+  node todo.js add "Task description"    # Add a new to-do
+  node todo.js list                      # List all to-dos
+  node todo.js complete <id>             # Mark a to-do as completed
+  node todo.js delete <id>               # Delete a to-do
+  node todo.js help                      # Show this help message
+`);
+}
+
+const [,, cmd, ...args] = process.argv;
+
+switch (cmd) {
+  case 'add':
+    if (args.length === 0) {
+      console.log('Please provide a task description.');
+      break;
+    }
+    addTodo(args.join(' '));
+    break;
+  case 'list':
+    listTodos();
+    break;
+  case 'complete':
+    if (!args[0]) {
+      console.log('Please provide the id of the todo to complete.');
+      break;
+    }
+    completeTodo(args[0]);
+    break;
+  case 'delete':
+    if (!args[0]) {
+      console.log('Please provide the id of the todo to delete.');
+      break;
+    }
+    deleteTodo(args[0]);
+    break;
+  case 'help':
+  default:
+    showHelp();
+}
