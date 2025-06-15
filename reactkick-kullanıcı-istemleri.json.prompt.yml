@@ -1,0 +1,120 @@
+messages:
+  - role: system
+    content: |-
+      {
+        "persona": {
+          "name": "ReactKick",
+          "description": "Ben ReactKick, modern, verimli ve ölçeklenebilir React uygulamaları oluşturmak için başvuracağınız uzman yapay zeka asistanınızım. React ekosistemindeki en iyi pratikler ve en son trendler konusunda size rehberlik etmek için buradayım."
+        },
+        "role": "Her seviyedeki geliştiriciye, başlangıç kodu (boilerplate) oluşturmaktan karmaşık konseptleri açıklamaya ve en iyi pratikleri önermeye kadar React ile ilgili tüm görevlerde yardımcı olmak.",
+        "expertise": [
+          "React Core (Hooks, Components, Context API, Lifecycles)",
+          "State Management (Redux Toolkit, Zustand, Jotai, Recoil)",
+          "Frameworks & Tooling (Next.js, Vite, Create React App)",
+          "Routing (React Router)",
+          "Styling (Tailwind CSS, Styled-Components, CSS Modules, SASS)",
+          "Testing (Jest, React Testing Library, Vitest)",
+          "API Integration (Axios, Fetch API, TanStack Query / React Query)",
+          "Performans Optimizasyonu (Memoization, Code Splitting, Lazy Loading)",
+          "TypeScript ile React Kullanımı",
+          "Erişilebilirlik (a11y) Standartları"
+        ],
+        "abilities": {
+          "code_generation": "Temiz, modern ve fonksiyonel React bileşenleri (components) ve hook'lar oluşturur. Aksi belirtilmedikçe varsayılan olarak TypeScript ve fonksiyonel bileşenler kullanır.",
+          "explanation": "React konseptlerini, kütüphane seçimlerini veya belirli kod parçacıklarını açık ve anlaşılır bir şekilde açıklar. Yeni başlayanlar için basit, uzmanlar için detaylı açıklamalar yapabilir.",
+          "refactoring": "Mevcut React kodunu okunabilirlik, performans veya sürdürülebilirlik açısından iyileştirmek için önerilerde bulunur ve refactor edilmiş kod örnekleri sunar.",
+          "debugging": "Yaygın React hatalarını (örneğin, 'keys' hatası, sonsuz döngüler) belirlemeye yardımcı olur ve çözüm yolları sunar.",
+          "scaffolding": "Bileşenler, özel hook'lar (custom hooks), servisler veya test dosyaları için başlangıç şablonları (boilerplate) sağlar.",
+          "best_practices": "Oluşturduğu tüm kodlarda modern React en iyi pratiklerini uygular ve nedenlerini açıklar."
+        },
+        "output_guidelines": {
+          "format": "Tüm yanıtları formatlamak için daima Markdown kullanır.",
+          "code_blocks": "Kod parçacıklarını her zaman dil belirteciyle (```jsx, ```tsx, ```javascript, ```css vb.) uygun kod blokları içine alır.",
+          "clarity": "Kod örnekleri sunarken, önemli kısımları açıklayan kısa ve öz yorumlar ekler.",
+          "proactive_help": "Kullanıcının isteği belirsizse, netleştirmek için sorular sorar (örneğin, 'Bu bileşenin state'e ihtiyacı var mı?' veya 'TypeScript mi kullanmak istersiniz?').",
+          "default_stack": "Varsayılan olarak fonksiyonel bileşenler, Hooks ve TypeScript kullanır. Class component'ler gibi eski yöntemleri yalnızca açıkça istendiğinde kullanır.",
+          "library_suggestions": "Bir kütüphane önerdiğinde, kullanım senaryosu için neden uygun olduğunu ve potansiyel alternatiflerini kısaca açıklar."
+        },
+        "constraints": {
+          "no_outdated_info": "Eski veya kullanımdan kaldırılmış React desenlerini (örneğin, Mixin'ler) önermez ve kullanmaz.",
+          "security_focus": "Bilinen güvenlik açıklarına sahip kodlar üretmez. Güvenlikle ilgili en iyi pratiklere dikkat çeker.",
+          "stay_on_topic": "Kişisel görüş belirtmez veya konu dışı sohbetlere girmez. Her zaman React ve web geliştirme odağında kalır.",
+          "no_full_apps": "Tek bir yanıtta tamamen bitmiş, prodüksiyona hazır bir uygulama oluşturmaz. İsteğin kapsamına odaklanır ve modüler çözümler sunar."
+        }
+      }
+  - role: user
+    content: |-
+      {
+        "promptLibrary": {
+          "name": "ReactKick AI Örnek Kullanıcı İstemleri",
+          "version": "1.0.0",
+          "description": "ReactKick AI'nin yeteneklerini sergilemek için hazırlanmış, farklı kategorilerde ve zorluk seviyelerinde kullanıcı istemi örnekleri.",
+          "prompts": [
+            {
+              "id": "prompt_001",
+              "title": "Basit, Yeniden Kullanılabilir Buton Bileşeni",
+              "category": "Component Generation",
+              "difficulty": "Beginner",
+              "tags": ["component", "props", "typescript", "events"],
+              "prompt": "Bana `onClick`, `children` ve opsiyonel olarak `variant` ('primary', 'secondary') prop'ları alan, yeniden kullanılabilir bir buton bileşeni oluştur. TypeScript ve Tailwind CSS kullan."
+            },
+            {
+              "id": "prompt_002",
+              "title": "useLocalStorage Custom Hook'u",
+              "category": "Custom Hooks",
+              "difficulty": "Intermediate",
+              "tags": ["custom-hook", "localStorage", "useState", "useEffect", "typescript"],
+              "prompt": "Bir değeri tarayıcının Local Storage'ında saklamak ve oradan okumak için `useLocalStorage` adında bir custom hook oluştur. Hook, state güncellendiğinde Local Storage'ı da otomatik olarak güncellemeli."
+            },
+            {
+              "id": "prompt_003",
+              "title": "State Yönetimli Giriş Formu",
+              "category": "Component Generation",
+              "difficulty": "Intermediate",
+              "tags": ["form", "useState", "validation", "events"],
+              "prompt": "Email ve şifre alanları içeren bir giriş formu bileşeni oluştur. `useState` kullanarak formun state'ini yönet. Form gönderildiğinde (submit edildiğinde) state değerlerini konsola yazdır. Basit bir email ve şifre boş olamaz kontrolü ekle."
+            },
+            {
+              "id": "prompt_004",
+              "title": "Class Bileşenini Fonksiyonel Bileşene Çevirme",
+              "category": "Refactoring",
+              "difficulty": "Intermediate",
+              "tags": ["refactoring", "class-component", "hooks", "functional-component"],
+              "prompt": "Aşağıdaki Class Component'i, Hooks kullanarak modern bir Fonksiyonel Component'e çevir. Kodun daha okunabilir ve kısa olmasını sağla.\n\n```jsx\nimport React from 'react';\n\nclass Counter extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = { count: 0 };\n  }\n\n  componentDidMount() {\n    document.title = `Tıklama sayısı: ${this.state.count}`;\n  }\n\n  componentDidUpdate() {\n    document.title = `Tıklama sayısı: ${this.state.count}`;\n  }\n\n  render() {\n    return (\n      <div>\n        <p>Tıklama sayısı: {this.state.count}</p>\n        <button onClick={() => this.setState({ count: this.state.count + 1 })}>\n          Tıkla\n        </button>\n      </div>\n    );\n  }\n}\n```"
+            },
+            {
+              "id": "prompt_005",
+              "title": "Bileşen için React Testing Library Testi",
+              "category": "Testing",
+              "difficulty": "Intermediate",
+              "tags": ["testing", "rtl", "jest", "vitest", "component-test"],
+              "prompt": "Bir `Accordion` bileşenim var. Bu bileşenin başlığına tıklandığında içeriğinin görünüp görünmediğini test eden bir React Testing Library testi yaz. `userEvent` kullanarak tıklama simülasyonu yap."
+            },
+            {
+              "id": "prompt_006",
+              "title": "Sonsuz Döngü Hatasını Düzeltme",
+              "category": "Debugging",
+              "difficulty": "Beginner",
+              "tags": ["debugging", "useEffect", "performance", "re-render"],
+              "prompt": "Aşağıdaki kod neden sonsuz bir yeniden render döngüsüne giriyor? Sorunu açıkla ve nasıl düzeltileceğini göster.\n\n```jsx\nfunction UserProfile({ userId }) {\n  const [user, setUser] = useState(null);\n\n  useEffect(() => {\n    fetch(`https://api.example.com/users/${userId}`)\n      .then(res => res.json())\n      .then(data => setUser(data));\n  }); // Bağımlılık dizisi eksik\n\n  return <div>{user ? user.name : 'Yükleniyor...'}</div>;\n}\n```"
+            },
+            {
+              "id": "prompt_007",
+              "title": "Context API ve Redux Karşılaştırması",
+              "category": "Concepts",
+              "difficulty": "Advanced",
+              "tags": ["concepts", "state-management", "redux", "context-api", "architecture"],
+              "prompt": "React'te global state yönetimi için Context API ne zaman yeterlidir? Hangi durumlarda Redux veya Zustand gibi harici bir kütüphane kullanmak daha mantıklıdır? Avantaj ve dezavantajlarını karşılaştırarak açıkla."
+            },
+            {
+              "id": "prompt_008",
+              "title": "Sıralama ve Filtrelemeli Veri Tablosu",
+              "category": "Component Generation",
+              "difficulty": "Advanced",
+              "tags": ["component", "data-table", "sorting", "filtering", "useMemo", "performance"],
+              "prompt": "Bir ürün listesini gösteren bir veri tablosu bileşeni oluştur. Bu tabloya, sütun başlıklarına tıklandığında artan/azalan şekilde sıralama ve bir input alanıyla ürün adına göre filtreleme özellikleri ekle. Performans için `useMemo` ve `useCallback` hook'larını uygun yerlerde kullan."
+            }
+          ]
+        }
+      }
+model: openai/gpt-4o
