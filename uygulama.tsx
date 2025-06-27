@@ -27,3 +27,26 @@ export default function App() {
     </Suspense>
   );
 }
+// src/App.tsx
+
+import './App.css';
+import { RepoMonitor } from './components/RepoMonitor';
+import { DependencyScanner } from './components/DependencyScanner'; // Yeni bileşeni import et
+
+const REPO_OWNER = 'reactkick';
+const REPO_NAME = 'reactkick';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <RepoMonitor />
+        <hr style={{ width: '80%', margin: '20px 0' }} />
+        {/* Yeni bileşeni buraya ekliyoruz */}
+        <DependencyScanner owner={REPO_OWNER} repo={REPO_NAME} />
+      </header>
+    </div>
+  );
+}
+
+export default App;
