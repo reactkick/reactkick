@@ -1,0 +1,37 @@
+# Bu, gitignore dosyasıdır.
+# Git'in hangi dosyaları ve klasörleri takip etmemesi gerektiğini belirtir.
+
+# # # GİZLİ BİLGİLER VE ÇEVRE DEĞİŞKENLERİ # # #
+# EN ÖNEMLİ KISIM! API anahtarları gibi sırları asla paylaşma.
+.env
+.env.local
+.env.*.local
+
+# # # BAĞIMLILIKLAR # # #
+# Projenin tüm kütüphaneleri. `npm install` ile yeniden oluşturulur.
+/node_modules
+
+# # # ÜRETİM / DERLENMİŞ KODLAR # # #
+# Vite, projeyi derlediğinde bu klasörü oluşturur.
+/dist
+/build
+
+# # # LOG DOSYALARI # # #
+# Hata ayıklama ve log kayıtları.
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# # # EDİTÖR VE IDE AYARLARI # # #
+# Her geliştiricinin kendi yerel ayarları vardır, bunları paylaşmaya gerek yok.
+.vscode/
+.idea/
+
+# # # İŞLETİM SİSTEMİNE ÖZGÜ DOSYALAR # # #
+# macOS ve Windows tarafından oluşturulan sistem dosyaları.
+.DS_Store
+Thumbs.db
+
+# # # TEST RAPORLARI # # #
+# Test kapsamı raporları.
+/coverage
