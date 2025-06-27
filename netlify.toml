@@ -1,0 +1,21 @@
+# netlify.toml
+
+# Netlify'ye build komutlarını ve ayarlarını söyleyen ana bölüm.
+[build]
+  # 1. Build Komutu: Netlify'nin statik dosyaları oluşturmak için
+  #    çalıştıracağı komut. ReactKick projesi için bu `npm run build` olmalıdır.
+  #    `package.json` dosyasını kontrol ederek doğru komut olduğundan emin olun.
+  command = "npm install && npm run build"
+
+  # 2. Yayın Dizini: `npm run build` komutu çalıştıktan sonra
+  #    oluşturulan statik dosyaların (HTML, CSS, JS) bulunduğu klasör.
+  #    Vite tabanlı projelerde bu genellikle 'dist' olur.
+  #    Create React App'te ise 'build' olur. ReactKick 'dist' kullanıyor.
+  publish = "dist"
+
+# [dev] bloğu, Netlify Dev CLI için yerel geliştirme ayarlarını içerir.
+# Bu da ReactKick için standart ayarlardır.
+[dev]
+  command = "npm run dev" # 'netlify dev' komutunun ne yapacağı
+  targetPort = 5173      # React'in çalıştığı port
+  publish = "dist"       # Statik dosyaların yeri
