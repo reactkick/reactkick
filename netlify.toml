@@ -19,3 +19,7 @@
   command = "npm run dev" # 'netlify dev' komutunun ne yapacağı
   targetPort = 5173      # React'in çalıştığı port
   publish = "dist"       # Statik dosyaların yeri
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
